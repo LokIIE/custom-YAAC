@@ -178,7 +178,7 @@
 
 %New length definition
 \newlength{\rightcolumnlength}
-\setlength{\rightcolumnlength}{15.3cm minus 1cm}
+\setlength{\rightcolumnlength}{15.3cm}
 
 \newlength{\leftcolumnlength}
 \setlength{\leftcolumnlength}{2.5cm}
@@ -189,11 +189,11 @@
 
 % Font Awesome icons aliases
 \newcommand{\mailSymbol}{\faAt}
-\newcommand{\locationSymbol}{\faMapMarker*}
+\newcommand{\locationSymbol}{\faMapMarker}
 \newcommand{\infoSymbol}{\faInfo}
 \newcommand{\linkedinSymbol}{\faLinkedin}
 \newcommand{\viadeoSymbol}{\faViadeo}
-\newcommand{\mobileSymbol}{\faMobile*}
+\newcommand{\mobileSymbol}{\faMobile}
 \newcommand{\githubSymbol}{\faGithub}
 \newcommand{\stackoverflowSymbol}{\faStackOverflow}
 \newcommand{\stackexchangeSymbol}{\faStackExchange}
@@ -222,7 +222,7 @@
 
 % Render a text with its symbol
 % Usage; \socialtext{<icon>}{<label>}
-\newcommand{\socialtext}[2]{\mbox{\textcolor{symbolcolor}{#1}#2\hspace{0.8em}}}
+\newcommand{\socialtext}[2]{\mbox{\textcolor{symbolcolor}{#1}#2}}
 
 % Render a link with its symbol
 % Usage; \sociallink{<icon>}{<label>}
@@ -344,7 +344,7 @@
 % Define social entries to print in header
 % \newcommand{\socialinfo}[1]{\def\@socialinfo{#1}}
 % SMA : modify socialinfo to a list of info
-\newcommand{\socialinfo}[1]{\def\@socialinfo{\foreach \n in {#1}{\n\hspace{0.8em}}}}
+\newcommand{\socialinfo}[1]{\def\@socialinfo{\foreach \n in {#1}{\n \hspace{1.4em}}}}
 
 % Render CV header
 % Needs \@firstname, \@lastname and \@tagline to be defined
@@ -452,9 +452,10 @@
 % }
 % SMA : custom layout
 \newenvironment{scholarship}{%
-\begin{longtable}{Y p{\rightcolumnlength}}
+\bigskip
+\begin{tabular}{Y p{\rightcolumnlength}}
 }{%
-\end{longtable}
+\end{tabular}
 }
 
 % Render a scholarshipentry in the scolarship environment
@@ -472,7 +473,7 @@
 
 % SMA : custom environment 'languages', based on 'skills'
 \newenvironment{languages}{%
-  \begin{longtable}{R{0.5\leftcolumnlength}p{\rightcolumnlength}}
+  \begin{longtable}{R{0.6\leftcolumnlength}p{\rightcolumnlength}}
 }{%
   \end{longtable}
 }
@@ -573,6 +574,7 @@
   \begin{minipage}[t]{\dimexpr(\linewidth/2) - 3em}
     #2
   \end{minipage}
+  \bigskip
   }
   
   
@@ -585,6 +587,7 @@
   \begin{minipage}[t]{\dimexpr(1\linewidth/3) - 2em}
     \center{#2}
   \end{minipage}
+  \bigskip
   }
 
 % Define the 'referencees' environment
